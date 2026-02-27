@@ -24,6 +24,12 @@ ChatGPT examples:
 
 * [Choosing a database technology](choosing-a-database-technology)
 
+Well-Architected Framework examples:
+
+* [AI-native platform architecture](ai-native-platform-architecture)
+
+* [Cloud AI inference platform](cloud-ai-inference-platform)
+
 Specific programming languages:
 
 * [Go programming language](go-programming-language)

@@ -23,6 +23,7 @@ Contents:
 - [Suggestions for writing good ADRs](#suggestions-for-writing-good-adrs)
 - [ADR example templates](#adr-example-templates)
 - [Teamwork advice for ADRs](#teamwork-advice-for-adrs)
+- [Well-Architected Framework alignment](#well-architected-framework-alignment)
 - [For more information](#for-more-information)
 
 Templates:
@@ -34,6 +35,7 @@ Templates:
 * [Decision record template for business case](locales/en/templates/decision-record-template-for-business-case/)
 * [Decision record template of the MADR project](locales/en/templates/decision-record-template-of-the-madr-project/)
 * [Decision record template using Planguage](locales/en/templates/decision-record-template-using-planguage/)
+* [**Decision record template for Well-Architected Framework**](locales/en/templates/decision-record-template-for-well-architected-framework/) ← multi-cloud WAF alignment across AWS, Azure, and GCP
 * [Decision record template by Paulo Merson](https://github.com/pmerson/ADR-template)
 * [Decision record template by Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
 * [Translations into more languages](locales/)
@@ -48,6 +50,8 @@ Examples:
 * [Programming languages](locales/en/examples/programming-languages/)
 * [Secrets storage](locales/en/examples/secrets-storage/)
 * [Timestamp format](locales/en/examples/timestamp-format/)
+* [**AI-native platform architecture**](locales/en/examples/ai-native-platform-architecture/) ← WAF-aligned, AI-native, multi-cloud
+* [**Cloud AI inference platform**](locales/en/examples/cloud-ai-inference-platform/) ← WAF-aligned, GPU inference, sustainability
 * [Many more...](locales/en/examples/)
 
 [Translations into more languages](locales/)
@@ -269,6 +273,31 @@ In theory, immutability is ideal. In practice, mutability has worked better for 
 
 </div>
 
+## Well-Architected Framework alignment
+
+Architecture decisions have real consequences across six dimensions that cloud providers have standardized as the **Well-Architected Framework (WAF)** pillars. Structuring ADRs around these pillars ensures that decisions are evaluated holistically — not just for functional correctness, but for operational sustainability, security, reliability, performance, and cost.
+
+**The six pillars**:
+
+| Pillar | Focus |
+|---|---|
+| **Operational Excellence** | Run, monitor, and improve workloads; automate operations; reduce toil |
+| **Security** | Protect data and systems; apply least privilege; detect and respond to threats |
+| **Reliability** | Recover from failures; meet availability targets; handle demand changes |
+| **Performance Efficiency** | Use resources efficiently; scale to demand; select the right technology |
+| **Cost Optimization** | Avoid waste; understand spending; deliver value at the lowest price point |
+| **Sustainability** | Minimize environmental impact; reduce energy consumption; use efficient resources |
+
+**Multi-cloud WAF references**:
+
+* [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+* [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
+* [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework)
+
+**WAF-aligned ADR template**: The [Decision record template for Well-Architected Framework](locales/en/templates/decision-record-template-for-well-architected-framework/) provides a structured format for evaluating every option against all six pillars, including a trade-off summary table.
+
+**AI-native workloads**: AI and machine learning workloads require special attention in the WAF context. GPU inference is one of the highest energy consumers in cloud portfolios. The Sustainability pillar, combined with the AWS [Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html), the Azure [AI workloads guidance](https://learn.microsoft.com/en-us/azure/well-architected/ai/), and the GCP [AI and ML framework guidance](https://cloud.google.com/architecture/framework/ai-and-ml) provide targeted design principles for responsible AI-native architectures.
+
 ## For more information
 
 Introduction:
@@ -316,6 +345,18 @@ Tools:
 Company-Specific Guidance:
 
   * [Amazon: AWS Prescriptive Guidance: ADR Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
+
+  * [Amazon: AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+
+  * [Amazon: AWS Well-Architected — Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html)
+
+  * [Microsoft: Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
+
+  * [Microsoft: Azure Well-Architected — AI workloads](https://learn.microsoft.com/en-us/azure/well-architected/ai/)
+
+  * [Google: Cloud Architecture Framework](https://cloud.google.com/architecture/framework)
+
+  * [Google: Cloud Architecture Framework — AI and ML](https://cloud.google.com/architecture/framework/ai-and-ml)
 
  * [GitHub: ADR GitHub organization](https://adr.github.io/)
 
