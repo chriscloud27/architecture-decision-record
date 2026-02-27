@@ -8,3 +8,4 @@
 * [Decision record template of the MADR Project](decision-record-template-of-the-madr-project)
 * [Decision record template using Planguage](decision-record-template-using-planguage)
 * [Decision record template for Well-Architected Framework](decision-record-template-for-well-architected-framework)
+* [Decision record template for WAF++](decision-record-template-for-waf-plus-plus)

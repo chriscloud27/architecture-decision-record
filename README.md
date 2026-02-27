@@ -36,6 +36,7 @@ Templates:
 * [Decision record template of the MADR project](locales/en/templates/decision-record-template-of-the-madr-project/)
 * [Decision record template using Planguage](locales/en/templates/decision-record-template-using-planguage/)
 * [**Decision record template for Well-Architected Framework**](locales/en/templates/decision-record-template-for-well-architected-framework/) ← multi-cloud WAF alignment across AWS, Azure, and GCP
+* [**Decision record template for WAF++**](locales/en/templates/decision-record-template-for-waf-plus-plus/) ← open-source, vendor-neutral, 7 pillars including Governance & Data Sovereignty
 * [Decision record template by Paulo Merson](https://github.com/pmerson/ADR-template)
 * [Decision record template by Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
 * [Translations into more languages](locales/)
@@ -297,6 +298,36 @@ Architecture decisions have real consequences across six dimensions that cloud p
 **WAF-aligned ADR template**: The [Decision record template for Well-Architected Framework](locales/en/templates/decision-record-template-for-well-architected-framework/) provides a structured format for evaluating every option against all six pillars, including a trade-off summary table.
 
 **AI-native workloads**: AI and machine learning workloads require special attention in the WAF context. GPU inference is one of the highest energy consumers in cloud portfolios. The Sustainability pillar, combined with the AWS [Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html), the Azure [AI workloads guidance](https://learn.microsoft.com/en-us/azure/well-architected/ai/), and the GCP [AI and ML framework guidance](https://cloud.google.com/architecture/framework/ai-and-ml) provide targeted design principles for responsible AI-native architectures.
+
+### WAF++ — Open-Source, Vendor-Neutral Extension
+
+**[WAF++](https://waf2p.dev/)** (Well-Architected Framework++) is a community-driven, open-source extension of the WAF that adds key capabilities not present in any individual cloud provider's framework:
+
+| What WAF++ adds | Why it matters |
+|---|---|
+| **7th pillar: Compliance, Governance & Data Sovereignty** | Explicit coverage of data residency, regulatory compliance (GDPR, ISO 27001, NIS2), vendor exit strategies, and auditability |
+| **Maturity levels** (Baseline → Standardize → Optimize) | Measure and track architectural maturity over time, not just at a single point |
+| **Evidence and audit tracing** | Built-in fields for linking decisions to compliance evidence, control matrices, and audit records |
+| **Vendor neutral** | Framework itself is not tied to AWS, Azure, or GCP — works across all providers and on-prem |
+
+**The seven WAF++ pillars**:
+
+| # | Pillar | Focus |
+|---|---|---|
+| 1 | Security | Controls, threat modelling, policy-as-code, secure defaults |
+| 2 | Cost Optimization | FinOps, cost transparency, budgets, guardrails, right-sizing |
+| 3 | Performance Efficiency | Scalability, latency, load patterns, resource tuning |
+| 4 | Reliability | SLOs, backups, failover, chaos testing, DR |
+| 5 | Operational Excellence | Developer experience, standards, paved road, self-service |
+| 6 | Sustainability | Resource efficiency, carbon footprint, green regions |
+| 7 | **Compliance, Governance & Data Sovereignty** | Data residency, exit strategies, compliance, portability |
+
+**WAF++ ADR template**: The [Decision record template for WAF++](locales/en/templates/decision-record-template-for-waf-plus-plus/) implements all seven pillars with maturity levels and evidence fields.
+
+**Open-source resources**:
+* [WAF++ website](https://waf2p.dev/)
+* [WAF++ framework on GitHub](https://github.com/WAF2p/framework)
+* [WAF++ documentation](https://waf2p.dev/docs/wafpp/1.0/)
 
 ## For more information
 

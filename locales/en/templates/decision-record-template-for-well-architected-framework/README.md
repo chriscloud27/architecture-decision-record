@@ -27,3 +27,7 @@ Use this template when making architecture decisions that:
 * Involve sustainability or carbon-footprint considerations
 * Require cross-pillar trade-off analysis
 * Will be reviewed against a cloud provider's Well-Architected Review
+
+## See also: WAF++ (vendor-neutral, open-source)
+
+If you need a **vendor-neutral** assessment that adds **Compliance, Governance & Data Sovereignty** as a seventh pillar — and want your decisions to be auditable with evidence tracing — consider the [WAF++ template](../decision-record-template-for-waf-plus-plus/) instead. WAF++ is an open-source community framework ([waf2p.dev](https://waf2p.dev/)) that complements rather than replaces cloud provider WAF reviews.
