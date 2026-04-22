@@ -8,6 +8,7 @@
 -->
 
 # Architecture decision record (ADR)
+> Originally forked by `https://github.com/joelparkerhenderson/architecture-decision-record.git/` and adjusted to the MaCh2.Cloud standards.
 
 An architecture decision record (ADR) is a document that captures an important architecture decision made along with its context and consequences.
 
