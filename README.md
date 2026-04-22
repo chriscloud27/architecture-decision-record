@@ -12,7 +12,44 @@
 
 An architecture decision record (ADR) is a document that captures an important architecture decision made along with its context and consequences.
 
-Contents:
+
+## How decisions are recorded in this repo
+
+ADRs for this repository live in [`docs/adr/`](docs/adr/). Use [`docs/adr/0000-template.md`](docs/adr/0000-template.md) as the starting point for every new record.
+
+**File naming:** use the next available four-digit prefix followed by a lowercase, dash-separated imperative title — e.g. `0001-choose-template-format.md`, `0002-adopt-multilingual-structure.md`.
+
+**Status values:** `proposed` · `accepted` · `deprecated` · `superseded by [ADR-XXXX](XXXX-title.md)`
+
+**When to write an ADR** — write one when a decision:
+- Changes or establishes the overall architecture (routing, auth, storage, tenancy)
+- Chooses between technologies or platforms
+- Establishes a pattern that all future contributions must follow
+- Would be confusing or surprising to a new contributor without context
+- Explicitly rejects a reasonable alternative
+
+Do **not** write an ADR for implementation details, bug fixes, or decisions that are obvious from reading the code.
+
+## Automated ADR documentation
+
+ADR authoring in this repo is assisted by AI tooling. The [`CLAUDE.md`](CLAUDE.md) file contains instructions for Claude Code (and compatible assistants such as GitHub Copilot) so that a new ADR can be drafted automatically: open a chat session, describe the decision you're facing, and the assistant will generate a correctly numbered, properly structured ADR file in `docs/adr/` following the template and conventions above. This removes the friction of blank-page authoring while keeping every decision traceable in version control.
+
+Based on the CLAUDE.md in this repo, write an ADR when a decision:
+- Changes or establishes the overall architecture (routing, auth, storage, tenancy model)
+- Chooses between technologies or platforms (e.g. Firebase vs Supabase)
+- Establishes a pattern that all future code must follow (e.g. RLS on every table)
+- Would be confusing or surprising to a new developer without context
+- Explicitly rejects a reasonable alternative — document why
+
+Do not write one for:
+- Implementation details (which component to use, how to name a variable)
+- Bug fixes
+- Decisions that are obvious from reading the code
+
+
+<div class="include" data-path="locales/en/what-is-an-architecture-decision-record">
+
+# Further Contents:
 
 - [What is an architecture decision record?](#what-is-an-architecture-decision-record)
 - [How decisions are recorded in this repo](#how-decisions-are-recorded-in-this-repo)
@@ -51,43 +88,6 @@ Examples:
 * [Many more...](locales/en/examples/)
 
 [Translations into more languages](locales/)
-
-
-## How decisions are recorded in this repo
-
-ADRs for this repository live in [`docs/adr/`](docs/adr/). Use [`docs/adr/0000-template.md`](docs/adr/0000-template.md) as the starting point for every new record.
-
-**File naming:** use the next available four-digit prefix followed by a lowercase, dash-separated imperative title — e.g. `0001-choose-template-format.md`, `0002-adopt-multilingual-structure.md`.
-
-**Status values:** `proposed` · `accepted` · `deprecated` · `superseded by [ADR-XXXX](XXXX-title.md)`
-
-**When to write an ADR** — write one when a decision:
-- Changes or establishes the overall architecture (routing, auth, storage, tenancy)
-- Chooses between technologies or platforms
-- Establishes a pattern that all future contributions must follow
-- Would be confusing or surprising to a new contributor without context
-- Explicitly rejects a reasonable alternative
-
-Do **not** write an ADR for implementation details, bug fixes, or decisions that are obvious from reading the code.
-
-### Automated ADR documentation
-
-ADR authoring in this repo is assisted by AI tooling. The [`CLAUDE.md`](CLAUDE.md) file contains instructions for Claude Code (and compatible assistants such as GitHub Copilot) so that a new ADR can be drafted automatically: open a chat session, describe the decision you're facing, and the assistant will generate a correctly numbered, properly structured ADR file in `docs/adr/` following the template and conventions above. This removes the friction of blank-page authoring while keeping every decision traceable in version control.
-
-Based on the CLAUDE.md in this repo, write an ADR when a decision:
-- Changes or establishes the overall architecture (routing, auth, storage, tenancy model)
-- Chooses between technologies or platforms (e.g. Firebase vs Supabase)
-- Establishes a pattern that all future code must follow (e.g. RLS on every table)
-- Would be confusing or surprising to a new developer without context
-- Explicitly rejects a reasonable alternative — document why
-
-Do not write one for:
-- Implementation details (which component to use, how to name a variable)
-- Bug fixes
-- Decisions that are obvious from reading the code
-
-
-<div class="include" data-path="locales/en/what-is-an-architecture-decision-record">
 
 ## What is an architecture decision record?
 
