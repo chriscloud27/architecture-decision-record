@@ -5,6 +5,8 @@
   updated: 2023-11-07T20:42:12Z
   contact: Joel Parker Henderson (http://joelparkerhenderson.com)
   options: commentable
+  summary: Architecture Decision Record (ADR) for software planning, CTO/CIO leadership teamwork, and project management documentation. Examples, templates, and tutorials. 
+  tags: architecturedecisionrecord adr decisionrecord projectmanagement plan cto cio leadership teamwork documentation template tutorial architecture decision record
 -->
 
 # Architecture decision record (ADR)
@@ -60,6 +62,7 @@ Do not write one for:
 - [Suggestions for writing good ADRs](#suggestions-for-writing-good-adrs)
 - [ADR example templates](#adr-example-templates)
 - [Teamwork advice for ADRs](#teamwork-advice-for-adrs)
+- [Well-Architected Framework alignment](#well-architected-framework-alignment)
 - [For more information](#for-more-information)
 
 Templates:
@@ -71,6 +74,8 @@ Templates:
 * [Decision record template for business case](locales/en/templates/decision-record-template-for-business-case/)
 * [Decision record template of the MADR project](locales/en/templates/decision-record-template-of-the-madr-project/)
 * [Decision record template using Planguage](locales/en/templates/decision-record-template-using-planguage/)
+* [**Decision record template for Well-Architected Framework**](locales/en/templates/decision-record-template-for-well-architected-framework/) ← multi-cloud WAF alignment across AWS, Azure, and GCP
+* [**Decision record template for WAF++**](locales/en/templates/decision-record-template-for-waf-plus-plus/) ← open-source, vendor-neutral, 7 pillars including Governance & Data Sovereignty
 * [Decision record template by Paulo Merson](https://github.com/pmerson/ADR-template)
 * [Decision record template by Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
 * [Translations into more languages](locales/)
@@ -85,6 +90,8 @@ Examples:
 * [Programming languages](locales/en/examples/programming-languages/)
 * [Secrets storage](locales/en/examples/secrets-storage/)
 * [Timestamp format](locales/en/examples/timestamp-format/)
+* [**AI-native platform architecture**](locales/en/examples/ai-native-platform-architecture/) ← WAF-aligned, AI-native, multi-cloud
+* [**Cloud AI inference platform**](locales/en/examples/cloud-ai-inference-platform/) ← WAF-aligned, GPU inference, sustainability
 * [Many more...](locales/en/examples/)
 
 [Translations into more languages](locales/)
@@ -243,7 +250,7 @@ Our file name convention:
 
 Characteristics of a good ADR:
 
-  * Rationale: Explain the reasons for doing the particular AD. This can include the context (see below), pros and cons of various potential choices, feature comparions, cost/benefit discussions, and more.
+  * Rationale: Explain the reasons for doing the particular AD. This can include the context (see below), pros and cons of various potential choices, feature comparisons, cost/benefit discussions, and more.
 
   * Specific: Each ADR should be about one AD, not multiple ADs.
 
@@ -299,9 +306,64 @@ You have an opportunity to lead your teammates, by talking together about the "w
 
 Some teams much prefer the name "decisions" over the abbreviation "ADRs". When some teams use the directory name "decisions", then it's as if a light bulb turns on, and the team starts putting more information into the directory, such as vendor decisions, planning decisions, scheduling decisions, etc. All of these kinds of information can use the same template. We hypothesize that people learn faster with words ("decisions") over abbreviations ("ADRs"), and people are more motivated to write work-in-progress docs when the word "record" is removed, and also some developers and some managers dislike the word "architecture".
 
-In theory, immutability is ideal. In practice, mutability has worked better for our teams. We insert the new info the existing ADR, with a date stamp, and a note that the info arrived after the decision. This kind of approach leads to a "living document" that we all can update. Typical updates are when we get information thanks to new teammates, or new offerings, or real-world results of our usages, or after-the-fact third-party changes such as vendor capabilties, pricing plans, license agreements, etc.
+In theory, immutability is ideal. In practice, mutability has worked better for our teams. We insert the new info the existing ADR, with a date stamp, and a note that the info arrived after the decision. This kind of approach leads to a "living document" that we all can update. Typical updates are when we get information thanks to new teammates, or new offerings, or real-world results of our usages, or after-the-fact third-party changes such as vendor capabilities, pricing plans, license agreements, etc.
 
 </div>
+
+## Well-Architected Framework alignment
+
+Architecture decisions have real consequences across six dimensions that cloud providers have standardized as the **Well-Architected Framework (WAF)** pillars. Structuring ADRs around these pillars ensures that decisions are evaluated holistically — not just for functional correctness, but for operational sustainability, security, reliability, performance, and cost.
+
+**The six pillars**:
+
+| Pillar | Focus |
+|---|---|
+| **Operational Excellence** | Run, monitor, and improve workloads; automate operations; reduce toil |
+| **Security** | Protect data and systems; apply least privilege; detect and respond to threats |
+| **Reliability** | Recover from failures; meet availability targets; handle demand changes |
+| **Performance Efficiency** | Use resources efficiently; scale to demand; select the right technology |
+| **Cost Optimization** | Avoid waste; understand spending; deliver value at the lowest price point |
+| **Sustainability** | Minimize environmental impact; reduce energy consumption; use efficient resources |
+
+**Multi-cloud WAF references**:
+
+* [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+* [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
+* [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework)
+
+**WAF-aligned ADR template**: The [Decision record template for Well-Architected Framework](locales/en/templates/decision-record-template-for-well-architected-framework/) provides a structured format for evaluating every option against all six pillars, including a trade-off summary table.
+
+**AI-native workloads**: AI and machine learning workloads require special attention in the WAF context. GPU inference is one of the highest energy consumers in cloud portfolios. The Sustainability pillar, combined with the AWS [Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html), the Azure [AI workloads guidance](https://learn.microsoft.com/en-us/azure/well-architected/ai/), and the GCP [AI and ML framework guidance](https://cloud.google.com/architecture/framework/ai-and-ml) provide targeted design principles for responsible AI-native architectures.
+
+### WAF++ — Open-Source, Vendor-Neutral Extension
+
+**[WAF++](https://waf2p.dev/)** (Well-Architected Framework++) is a community-driven, open-source extension of the WAF that adds key capabilities not present in any individual cloud provider's framework:
+
+| What WAF++ adds | Why it matters |
+|---|---|
+| **7th pillar: Compliance, Governance & Data Sovereignty** | Explicit coverage of data residency, regulatory compliance (GDPR, ISO 27001, NIS2), vendor exit strategies, and auditability |
+| **Maturity levels** (Baseline → Standardize → Optimize) | Measure and track architectural maturity over time, not just at a single point |
+| **Evidence and audit tracing** | Built-in fields for linking decisions to compliance evidence, control matrices, and audit records |
+| **Vendor neutral** | Framework itself is not tied to AWS, Azure, or GCP — works across all providers and on-prem |
+
+**The seven WAF++ pillars**:
+
+| # | Pillar | Focus |
+|---|---|---|
+| 1 | Security | Controls, threat modelling, policy-as-code, secure defaults |
+| 2 | Cost Optimization | FinOps, cost transparency, budgets, guardrails, right-sizing |
+| 3 | Performance Efficiency | Scalability, latency, load patterns, resource tuning |
+| 4 | Reliability | SLOs, backups, failover, chaos testing, DR |
+| 5 | Operational Excellence | Developer experience, standards, paved road, self-service |
+| 6 | Sustainability | Resource efficiency, carbon footprint, green regions |
+| 7 | **Compliance, Governance & Data Sovereignty** | Data residency, exit strategies, compliance, portability |
+
+**WAF++ ADR template**: The [Decision record template for WAF++](locales/en/templates/decision-record-template-for-waf-plus-plus/) implements all seven pillars with maturity levels and evidence fields.
+
+**Open-source resources**:
+* [WAF++ website](https://waf2p.dev/)
+* [WAF++ framework on GitHub](https://github.com/WAF2p/framework)
+* [WAF++ documentation](https://waf2p.dev/docs/wafpp/1.0/)
 
 ## For more information
 
@@ -337,6 +399,8 @@ In-depth:
 
  * [Architectural Decisions — The Making Of](https://ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html)
 
+* [Architectural Retrospectives: the Key to Getting Better at Architecting](https://www.infoq.com/articles/architectural-retrospectives/)
+
 Tools:
 
   * [Command-line tools for working with Architecture Decision Records](https://github.com/npryce/adr-tools)
@@ -348,6 +412,18 @@ Tools:
 Company-Specific Guidance:
 
   * [Amazon: AWS Prescriptive Guidance: ADR Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
+
+  * [Amazon: AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+
+  * [Amazon: AWS Well-Architected — Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html)
+
+  * [Microsoft: Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
+
+  * [Microsoft: Azure Well-Architected — AI workloads](https://learn.microsoft.com/en-us/azure/well-architected/ai/)
+
+  * [Google: Cloud Architecture Framework](https://cloud.google.com/architecture/framework)
+
+  * [Google: Cloud Architecture Framework — AI and ML](https://cloud.google.com/architecture/framework/ai-and-ml)
 
  * [GitHub: ADR GitHub organization](https://adr.github.io/)
 
